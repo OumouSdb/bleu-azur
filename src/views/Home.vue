@@ -1,110 +1,120 @@
 <template>
   <div class="home">
+<h1>Bleu Azur</h1>
 
     <h2>Escapade romantique</h2>
-      <article class="article">
-       <div class="cardHome">
-          <h3>Maldives</h3>
-          <img src="https://images.unsplash.com/photo-1537026999589-10d732272c29?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzF8fG1hbGRpdmVzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
-          <button>Valider</button>
-        </div>
-          <div class="cardHome">
-          <h3>Zanzibar</h3>
-          <img src="https://images.unsplash.com/photo-1592229506490-dda533630362?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHphbnppYmFyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
-          <button>Valider</button>
-        </div>
-          <div class="cardHome">
-          <h3>Les seychelles</h3>
-          <img src="https://images.unsplash.com/photo-1537026999589-10d732272c29?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzF8fG1hbGRpdmVzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+    <div class="block1">
+      <div class="divImage">
+        <h3>Bora</h3>
+        <img src="@/assets/turquie.jpg" alt="">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+        <button>Reserver !</button>
+      </div>
+    
+        <div class="divImage">
+      <h3>Maldives</h3>
+      <img src="@/assets/turquie.jpg" alt="">
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+      <button>Reserver !</button>
+    </div>
+    <div class="divImage">
+      <h3>Seychelles</h3>
+      <img src="@/assets/turquie.jpg" alt="">
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+      <button>Reserver !</button>
+    </div>
+    </div>
+        <h2>Séjour en Thalasso</h2>
+  <div class="block1">
+      <div class="divImage">
+      <h3>Zanzibar</h3>
+        <img src="@/assets/turquie.jpg" alt="">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+        <button>Reserver !</button>
+      </div>
+      <div class="divImage">
+      <h3>Turquie</h3>
+        <img src="@/assets/turquie.jpg" alt="">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+        <button>Reserver !</button>
+      </div>
+      <div class="divImage">
+      <h3>Maldives</h3>
+        <img src="@/assets/turquie.jpg" alt="">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+        <button>Reserver !</button>
+      </div>
+  </div>
+<h2>Aventure et immersion garantie</h2>
+  <div class="block1">
+    <div class="divImage">
+      <h3>Turquie</h3>
 
-          <button>Valider</button>
-        </div>
-      </article>
-      <br>
-      <br>
-      <br>
-        <br>
-      <br>
-      <br>  <br>
-      <br>
-      <br>  <br>
-      <br>
-      <br>  <br>
-      <br>
-      <br>  <br>
-      <br>
-      <br>
+      <img src="@/assets/turquie.jpg" alt="">
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+      <button>Reserver !</button>
+    </div>
+    <div class="divImage">
+      <h3>Kenya</h3>
 
-    <h2>Séjour en Thalasso</h2>
-   <article class="article">
-        <div class="cardHome">
-          <h3>Bora Bora</h3>
-          <img src="https://images.unsplash.com/photo-1549035092-33b2937b075a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8emFuemliYXJ8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
-          <button>Valider</button>
-        </div>
-          <div class="cardHome">
-          <h3>Ile maurice</h3>
-          <img src="https://images.unsplash.com/photo-1589197331516-4d84b72ebde3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Ym9yYSUyMGJvcmF8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
-          <button>Valider</button>
-        </div>
-          <div class="cardHome">
-          <h3>Bali</h3>
-          <img src="https://images.unsplash.com/photo-1553902000-e036b7d05af5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fGJhbGl8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'" alt="">
-          <button>Valider</button>
-        </div>
-      </article>
-            <br>
-      <br>
-      <br>
-        <br>
-      <br>
-      <br>  <br>
-      <br>
-      <br>  <br>
-      <br>
-      <br>  <br>
-      <br>
-      <br>  <br>
-      <br>
-      <br>
-    <h2>Séjour en immersion</h2>
-         <article class="article">
-        <div class="cardHome">
-          <h3>Turquie</h3>
-          <img src="https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8a2VueWF8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'" alt="">
-          <button>Valider</button>
-        </div>
-          <div class="cardHome">
-          <h3>Kenya</h3>
-          <img src="https://images.unsplash.com/photo-1583655225827-d08dff9c46ed?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dHVycXVpZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
-          <button>Valider</button>
-        </div>
-          <div class="cardHome">
-          <h3>Tanzanie</h3>
-          <img src="https://images.unsplash.com/photo-1553902000-e036b7d05af5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fGJhbGl8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
-          <button>Valider</button>
-        </div>
-      </article>
+      <img src="@/assets/turquie.jpg" alt="">
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+      <button>Reserver !</button>
+    </div>
+    <div class="divImage">
+      <h3>Tanzanie</h3>
+      <img src="@/assets/turquie.jpg" alt="">
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+      <button>Reserver !</button>
+    </div>
+
+  </div>
+
+
+
   </div>
 </template>
 
 
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Dr+Sugiyama&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap');
+<style scoped>
+body,html {
+  font-family: "Zen Loop", cursive;
+  color: purple;
+  margin: 0;
+  padding: 0;
+}
+h1,h2, h3{
+  font-family: "Dr Sugiyama", cursive;
+  font-size: 2.5em;
+}
+.home{
 
-.cardHome {
-  width: 250px;
+  margin: auto;
+  text-align: center;
+/* margin-top: 5%; */
+
+}
+.divImage{
+ width: 250px;
   text-align: center;
   background: linear-gradient(#ff9966, #ff5e62);
   margin-top: 20px;
   border-radius: 5px;
   opacity: 0.9;
-  float: left;
-} 
+}
+.block1{
+    width: 100%;
+    grid-gap: 30px;
+display: flex;
+justify-content: space-around;
+}
 
-.cardHome button,
+.block1 img{
+  width: 90%;
+  text-align: center; 
+}
+
 button {
   padding: 10px;
   margin-bottom: 10px;
@@ -113,31 +123,9 @@ button {
   background-color: transparent;
   cursor: pointer;
 }
-.cardHome button:hover,
 button:hover {
   background: linear-gradient(#f2994a, #f2c94c);
 }
 
-.cardHome img {
-  width: 240px;
-  border-radius: 5px;
-
-}
-.cardHome p {
-  font-size: 1.3em;
-  color: white;
-  font-weight: bold;
-}
-
-p{
-  font-family: 'Zen Loop', cursive;
-
-}
-.article{
-  margin-left: 25%;
-  justify-content: space-between;
-  width: 100%;
-
-}
 
 </style>

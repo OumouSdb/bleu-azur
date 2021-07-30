@@ -1,9 +1,9 @@
 <template>
 
-    <div>
+    <div class="sejour">
       <div>
               <h1>Quelle destination vous fais rêver ?</h1>
-                <form action="" @click.prevent="form">
+                <form action="" @submit.prevent="form(verify)">
                 <input type="text" placeholder="Quel pays vous fais rêver ?" v-model='verify'>
                 <label for="date">Date de depart</label>
                 <input type="date" name="" id="" v-model='date'>
@@ -17,14 +17,14 @@
                 <section>
           <article 
         v-bind:style="{display: display}" 
-                v-for='(destination,index) in destinations ' 
+                v-for='(destination,index) in destinations' 
                 v-bind:pays='destination.pays'
                 v-bind:image='destination.image'
                 v-bind:activite='destination.activite'
                 v-bind:key='index'
                 class="container"
         >
-    <div v-if="verify == destination.pays.substr(0, 1) || verify == destination.pays.substr(0, 2) || verify == destination.pays.substr(0, 3) ||verify == destination.pays"
+    <div v-if=" test(verify) == destination.pays.substr(0, 1) || test(verify) == destination.pays.substr(0, 2) || test(verify) == destination.pays.substr(0, 3) ||test(verify) == destination.pays"
     class="card"
       >
         <h2> {{destination.pays}}</h2>
@@ -58,15 +58,15 @@ export default {
             dateA: '',
             display: 'block',
              destinations: [
-                { pays: 'Tanzanie', image: 'https://images.unsplash.com/photo-1592229506490-dda533630362?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHphbnppYmFyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60', activite: 'de Zanzibar' },
-                { pays: 'Tanzanie', image: 'https://images.unsplash.com/photo-1549035092-33b2937b075a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8emFuemliYXJ8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60', activite: 'du Safari' },
+                { pays: 'Tanzanie', image:    'https://images.unsplash.com/photo-1592229506490-dda533630362?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHphbnppYmFyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60', activite: 'de Zanzibar' },
+                { pays: 'Tanzanie', image:    'https://images.unsplash.com/photo-1549035092-33b2937b075a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8emFuemliYXJ8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60', activite: 'du Safari' },
                 { pays: 'Ile maurice', image: 'https://images.unsplash.com/photo-1585494716074-4788d5a54b1d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aWxlJTIwbWF1cmljZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60', activite: 'du Zoo' },
-                { pays: 'Bali', image: 'https://images.unsplash.com/photo-1553902000-e036b7d05af5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fGJhbGl8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60', activite: 'de la Jungle' },
-                { pays: 'Turquie', image: 'https://images.unsplash.com/photo-1583655225827-d08dff9c46ed?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dHVycXVpZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60', activite: 'de Izmir et Istanbul' },
-                { pays: 'Maldives', image: 'https://images.unsplash.com/photo-1537026999589-10d732272c29?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzF8fG1hbGRpdmVzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60', activite: 'vous Balader, vous relaxer, faire de la plongé sous marine' },
-                { pays: 'Bora Bora', image: 'https://images.unsplash.com/photo-1589197331516-4d84b72ebde3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Ym9yYSUyMGJvcmF8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60', activite: 'profiter des promenandes en Bateau' },
-                { pays: 'Seychelles', image: 'https://images.unsplash.com/photo-1595773382291-06d1b6cbc43b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8c2V5Y2hlbGxlc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60', activite: 'profiter des promenandes Bateau'},
-                { pays: 'Kenya', image: 'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8a2VueWF8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60', activite: 'la plage' }
+                { pays: 'Bali', image:        'https://images.unsplash.com/photo-1553902000-e036b7d05af5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fGJhbGl8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60', activite: 'de la Jungle' },
+                { pays: 'Turquie', image:     'https://images.unsplash.com/photo-1583655225827-d08dff9c46ed?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dHVycXVpZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60', activite: 'de Izmir et Istanbul' },
+                { pays: 'Maldives', image:    'https://images.unsplash.com/photo-1537026999589-10d732272c29?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzF8fG1hbGRpdmVzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60', activite: 'vous Balader, vous relaxer, faire de la plongé sous marine' },
+                { pays: 'Bora Bora', image:   'https://images.unsplash.com/photo-1589197331516-4d84b72ebde3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Ym9yYSUyMGJvcmF8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60', activite: 'profiter des promenandes en Bateau' },
+                { pays: 'Seychelles', image:  'https://images.unsplash.com/photo-1595773382291-06d1b6cbc43b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8c2V5Y2hlbGxlc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60', activite: 'profiter des promenandes Bateau'},
+                { pays: 'Kenya', image:       'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8a2VueWF8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60', activite: 'la plage' }
 
 
             ]
@@ -89,9 +89,10 @@ export default {
                     if (this.verify != e.pays) {
                         this.recapitulatif = 'Cette destination n\'est pas encore disponible'
                         this.seen = true
-                    } if (this.verify.length == '') {
+                    } if (this.verify.length < 1) {
                         this.recapitulatif = 'Aucune destination n\'a ete choisi'
-                        this.seen = false
+                        this.seen = true
+                    
                     }
                     else {
                         this.seen = false
@@ -99,18 +100,40 @@ export default {
                         this.display = 'block'
                     }
                 })
-            },
+            },test:function(monInput){
+                               
+                if(monInput.length){
+                  if(monInput == monInput.toLowerCase()){
+                     return monInput[0].toUpperCase() + monInput.slice(1)
+                      }else if(monInput == monInput.toUpperCase()){
+                       return monInput[0] + monInput.toLowerCase().slice(1)
+                          }
+                }
+            }
+          
   }
 }
 </script>
 <style>
+.sejour{
+    margin: auto;
+    width: 1350px;
+  margin: auto;
+  text-align: center;
+margin-top: 5%;
 
+}
 @import url('https://fonts.googleapis.com/css2?family=Dr+Sugiyama&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap');
 
 section{
-  display: flex;
+  /* display: grid;
+  grid-template-columns: repeat(auto-fill 300px 300px); */
   justify-content: space-around;
+
+width: 60%;
+margin: auto;
+display: flex;
 }
 body {
   font-family: "Zen Loop", cursive;

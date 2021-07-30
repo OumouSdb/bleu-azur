@@ -2,8 +2,9 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to='/sejour'>Séjour</router-link>
+      <router-link to='/sejour'>Séjour</router-link> |
+      <router-link to="/contact">Contact</router-link>
+
     </div>
     <router-view />
 
@@ -25,15 +26,21 @@ export default {
 </script>
 
 <style>
-
-
+@import url('https://fonts.googleapis.com/css2?family=Dr+Sugiyama&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap');
+body,html {
+  font-family: "Zen Loop", cursive;
+  color: purple;
+  margin: 0;
+  padding: 0;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background-repeat: no-repeat;
+background-repeat: no-repeat;
   margin: auto;
  position: relative;
 padding: 300px 100px;
@@ -51,19 +58,13 @@ max-width: 100%;
 background-size: cover;
 background-position: top center;
 opacity: 0.25;
-
 }
-
-
-
 #nav {
   padding: 30px;
  position: absolute;
  top: 0;
   right: 40%;
-
 }
-
 #nav a {
   font-weight: bold;
   color: #2c3e50;
