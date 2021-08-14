@@ -1,4 +1,4 @@
-# projet-voyage
+# bleu_azur
 
 ## Project setup
 ```

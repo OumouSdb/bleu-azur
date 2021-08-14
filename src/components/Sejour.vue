@@ -14,7 +14,7 @@
     <section>
       <article
         v-bind:style="{ display: display }"
-        v-for="(destination, index) in destinations"
+        v-for="(destination, index) in getDestination"
         v-bind:pays="destination.pays"
         v-bind:image="destination.image"
         v-bind:activite="destination.activite"
@@ -36,9 +36,11 @@
       {{ recapitulatif }}
     </div>
   </div>
+  
 </template>
 
 <script>
+import moment from 'moment'
 export default {
   name: "Sejour",
 
@@ -48,11 +50,17 @@ export default {
       image: "",
       recapitulatif: "",
       seen: false,
-      date: "",
+      date: moment().format('DDDD Do MMMM, YYYY'),
       dateA: "",
-      display: "block"
+      display: "block",
     };
+    
   },
+   computed:{
+         getDestination(){
+         return this.$store.getters.getDestinations;
+         }
+      },
   methods: {
     handleClick: function (destination) {
       this.recapitulatif = "";
@@ -66,6 +74,7 @@ export default {
         if (this.verify != e.pays) {
           this.recapitulatif = "Cette destination n'est pas encore disponible";
           this.seen = true;
+         
         }
         if (this.verify.length < 1) {
           this.recapitulatif = "Aucune destination n'a ete choisi";
@@ -89,6 +98,7 @@ export default {
     ipt: function () {
       this.recapitulatif = "";
     }
+
   }
 };
 </script>

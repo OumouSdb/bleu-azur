@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="contact">
     <h1>Nous contacter</h1>
 
     <form action="">
@@ -23,3 +23,10 @@
     </form>
   </div>
 </template>
+
+<script>
+
+export default{
+    name: 'Contact',
+}
+</script>
