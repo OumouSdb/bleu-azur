@@ -5,9 +5,10 @@
       <form action="" @submit="form(verify)">
         <input type="text" placeholder="Quel pays vous fais rêver ?" v-model="verify" @click="ipt"/>
         <label for="date">Date de depart</label>
-        <input type="date" name="" id="" v-model="date" />
+        <input type="date" data-date="" id="maDate" v-model="date" />
         <label for="dateA">Date d'arrivée</label>
         <input type="date" name="" id="" v-model="dateA" />
+
         <button>Valider</button>
       </form>
     </div>
@@ -22,7 +23,7 @@
         class="container"
       >
         <div
-          v-if=" test(verify) == destination.pays.substr(0, 1) || test(verify) == destination.pays.substr(0, 2) || test(verify) == destination.pays.substr(0, 3) ||test(verify) == destination.pays"
+          v-if=" filter(verify) == destination.pays.substr(0, 1) || filter(verify) == destination.pays.substr(0, 2) || filter(verify) == destination.pays.substr(0, 3) ||filter(verify) == destination.pays"
           class="card"
         >
           <h2>{{ destination.pays }}</h2>
@@ -40,21 +41,21 @@
 </template>
 
 <script>
-import moment from 'moment'
+
 export default {
   name: "Sejour",
-
   data: function () {
     return {
       verify: "",
       image: "",
       recapitulatif: "",
       seen: false,
-      date: moment().format('DDDD Do MMMM, YYYY'),
+      date: '',
       dateA: "",
       display: "block",
+      maDate:''
     };
-    
+
   },
    computed:{
          getDestination(){
@@ -62,14 +63,18 @@ export default {
          }
       },
   methods: {
+    
     handleClick: function (destination) {
       this.recapitulatif = "";
       this.recapitulatif = "Recapitulatif de votre voyage: Date de depart " + this.date + " Date d'arrivée : " + this.dateA + " a destination de " + destination.pays + "vous pourrez profiter de  " + destination.activite;
       this.seen = true;
+
+      
     },
     form: function () {
-      this.seen == false;
+    this.seen == false;
       this.recapitulatif = true;
+      
       this.destinations.forEach((e) => {
         if (this.verify != e.pays) {
           this.recapitulatif = "Cette destination n'est pas encore disponible";
@@ -86,7 +91,7 @@ export default {
         }
       });
     },
-    test: function (monInput) {
+    filter: function (monInput) {
       if (monInput.length) {
         if (monInput == monInput.toLowerCase()) {
           return monInput[0].toUpperCase() + monInput.slice(1);
